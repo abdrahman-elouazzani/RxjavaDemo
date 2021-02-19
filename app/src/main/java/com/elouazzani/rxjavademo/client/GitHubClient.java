@@ -1,13 +1,19 @@
 package com.elouazzani.rxjavademo.client;
 
+import androidx.annotation.NonNull;
+
+import com.elouazzani.rxjavademo.model.GitHubRepo;
 import com.elouazzani.rxjavademo.service.GitHubService;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.List;
+
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 
 public class GitHubClient {
 
@@ -23,5 +29,15 @@ public class GitHubClient {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         gitHubService = retrofit.create(GitHubService.class);
+    }
+    public static GitHubClient getInstance(){
+        if(instance==null) {
+            instance=new GitHubClient();
+        }
+        return instance;
+    }
+    //
+    public Observable<List<GitHubRepo>> getStarredRepos(@NonNull String userName) {
+        return gitHubService.getStarredRepositories(userName);
     }
 }

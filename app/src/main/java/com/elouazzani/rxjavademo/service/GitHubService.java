@@ -8,5 +8,5 @@ import rx.Observable;
 
 public interface GitHubService {
     @GET("users/{user}/starred")
-    Observable<List<GitHubRepo>> getStartedRepositories(@Path("user") String name);
+    Observable<List<GitHubRepo>> getStarredRepositories(@Path("user") String name);
 }
