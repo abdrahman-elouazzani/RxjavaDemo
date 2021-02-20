@@ -11,3 +11,6 @@ Demo android java application about implementation of Rxjava and Retrofit, this 
   2. [The library Gson](https://github.com/google/gson) to create the JSON-OBJECT-REAUEST and JSON-ARRAY, JSON-OBECT for Parsing the data.
   3. [Rxjava].
   ... <br/>
+  
+  
+  ![Screenshot_1613828773](https://user-images.githubusercontent.com/40376977/108598362-93ab6b80-738d-11eb-807a-037714061a3c.png)
